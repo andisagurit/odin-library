@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library</title>
+
+    <link rel="stylesheet" href="../odin-library/style.css" />
+    <script type="text/javascript" src="../odin-library/javascript.js" defer></script>
+</head>
+<body>
+    <div id="library">
+        <div id="header-container">
+            <div class="header-right">
+                <a href="https://www.goodreads.com/earthtoandi" target="_blank">
+                    <img class="goodreads" src="../odin-library/images/goodreads-icon.png" alt="Goodreads" title='Check out my Goodreads Profile!' />
+                </a>
+                <h1>My Library Tracker</h1>
+            </div>
+        </div>
+        <div id="main-container">
+            <div class="form-panel">
+                <form class="add-form">
+                    <h2>Add New Book to Library</h2>
+                    <input type="text" name="title" id="title" placeholder="Title">
+                    <input type="text" name="author" id="author" placeholder="Author">
+                    <input type="text" name="pages" id="pages" placeholder="Number of Pages">
+            
+                    <div class="checkbox">
+                        <input id="read" type="checkbox" required>I have Read this book!
+                    </div>
+                </form>
+
+                <div class="button-div">
+                    <button type="button" class="add-button">Add Book</button>
+                    <button type="button" class="reset-button">Reset Form</button>
+                </div>
+            </div>
+            <div class="books"></div>
+        </div>
+    </div>
+</body>
+</html>

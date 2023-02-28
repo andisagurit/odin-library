@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+#library {
+    height: 100vh;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#header-container {
+    width: 100%;
+    height: auto;
+    background-color: #eee;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%), 0 0 2px rgb(0 0 0 / 7%);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-right: 25px;
+}
+
+img:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+#main-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: auto 40px;
+}
+
+.books {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-auto-rows: min-content;
+    gap: 20px;
+    padding: 30px;
+}
+
+.card {
+    text-align: left;
+    display: grid;
+    font-size: 18px;
+    padding: 15px;
+    text-transform: capitalize;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.form-panel {
+    padding: 50px 0;
+}
+
+.add-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+    padding: 25px;
+}
+
+input, select {
+    font-size: 15px;
+    padding: 5px;
+    margin-bottom: 30px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #eee;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.checkbox input {
+    margin: 0 10px 0 0;
+    vertical-align: inherit;
+}
+
+.remove-button,
+.read-button {
+    font-family: 'Source Sans Pro', sans-serif;
+    cursor: pointer;
+    text-align: center;
+    height: 25px;
+    width: 50%;
+    margin-top: 10px;
+}
+
+.remove-button {
+    background-color: rgba(51, 51, 51, 0.05);
+}
+
+.button-div {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.add-button,
+.reset-button {
+    font-size: 16px;
+    letter-spacing: 3px;
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    height: 40px;
+    padding: 0 30px;
+    justify-content: center;
+    list-style: none;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+}
+
+.add-button:focus,
+.reset-button:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  }
+  
+.add-button:hover,
+.reset-button:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+  
+.add-button:active,
+.reset-button:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
