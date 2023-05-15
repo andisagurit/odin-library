@@ -8,37 +8,36 @@
 
     <link rel="stylesheet" href="../odin-library/style.css" />
     <script type="text/javascript" src="../odin-library/javascript.js" defer></script>
+
+    <link rel="icon" href="./images/library-icon.png" type="image/x-icon" />
 </head>
 <body>
-    <div id="library">
-        <div id="header-container">
-            <div class="header-right">
-                <a href="https://www.goodreads.com/earthtoandi" target="_blank">
-                    <img class="goodreads" src="../odin-library/images/goodreads-icon.png" alt="Goodreads" title='Check out my Goodreads Profile!' />
-                </a>
-                <h1>My Library Tracker</h1>
-            </div>
+    <div id="header-container">
+        <div class="header-right">
+            <a href="https://www.goodreads.com/earthtoandi" target="_blank">
+                <img class="goodreads" src="../odin-library/images/goodreads-icon.png" alt="Goodreads" title='Check out my Goodreads Profile!' />
+            </a>
+            <h1 class="headline">Read Up – Write Down</h1>
         </div>
-        <div id="main-container">
-            <div class="form-panel">
-                <form class="add-form">
-                    <h2>Add New Book to Library</h2>
-                    <input type="text" name="title" id="title" placeholder="Title">
-                    <input type="text" name="author" id="author" placeholder="Author">
-                    <input type="text" name="pages" id="pages" placeholder="Number of Pages">
-            
-                    <div class="checkbox">
-                        <input id="read" type="checkbox" required>I have Read this book!
-                    </div>
-                </form>
-
-                <div class="button-div">
-                    <button type="button" class="add-button">Add Book</button>
-                    <button type="button" class="reset-button">Reset Form</button>
+    </div>    
+    <div id="main-container">
+        <div class="form-panel">
+            <form class="add-form">
+                <h2 class="form-title">Add New Book to Track</h2>
+                <input type="text" name="title" id="title" oninput="formValidation();" placeholder="Title" required />
+                <input type="text" name="author" id="author" oninput="formValidation();" placeholder="Author" required />
+                <input type="number" name="pages" id="pages" placeholder="Number of Pages" required />
+        
+                <div class="checkbox">
+                    <input id="read" type="checkbox">I have Read this book!
                 </div>
-            </div>
-            <div class="books"></div>
+                <div class="button-div">
+                    <button type="submit" class="add-button">Add Book</button>
+                    <button type="reset" class="reset-button">Reset Form</button>
+                </div>
+            </form>
         </div>
-    </div>
+        <div class="books"></div>
+    </div>   
 </body>
 </html>
