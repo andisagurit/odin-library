@@ -32,9 +32,9 @@ function displayBooks() {
         const author = document.createElement('p');
         const pages = document.createElement('p');
 
-        title.textContent = "Title: " + myLibrary[i].title;
-        author.textContent = "Author: " + myLibrary[i].author;
-        pages.textContent = "Pages: " + myLibrary[i].pages;
+        title.innerHTML  = `<b>Title:</b> ` + myLibrary[i].title;
+        author.innerHTML  = `<b>Author:</b> ` + myLibrary[i].author;
+        pages.innerHTML  = `<b>Pages:</b> ` + myLibrary[i].pages;
 
         card.appendChild(title);
         card.appendChild(author);
@@ -97,12 +97,11 @@ function newBooksData() {
     let read = document.getElementById('read').checked;
 
     if ((title == "") || (author == "") || (pages == "")) {
-        alert("Please complete form details.");
-        form.reset();
-    } else {
-        addBookToLibrary(title, author, pages, read);
-        form.reset();
-    }
+        return;
+    } 
+
+    addBookToLibrary(title, author, pages, read);
+    form.reset();
 }
 
 //function to clear form
@@ -119,6 +118,30 @@ addButton.addEventListener('click', (e) => {
 resetButton.addEventListener("click", (e) => {
     clearForm();
 });
+
+
+//form validation
+const formValidation = (() => {
+    const formTitle = document.getElementById("title");
+
+    formTitle.addEventListener("input", () => {
+        if (formTitle.value === ""){
+            formTitle.setCustomValidity("Title should not be blank!");
+        } else {
+            formTitle.setCustomValidity("");
+        }
+    });
+
+    const formAuthor = document.getElementById("author");
+
+    formAuthor.addEventListener("input", () => {
+        if (formAuthor.value === ""){
+            formAuthor.setCustomValidity("Author should not be blank!");
+        } else {
+            formAuthor.setCustomValidity("");
+        }
+    });
+})();
 
 //pre-defined books
 addBookToLibrary('Illuminae', 'Amie Kaufman & Jay Kristoff', '624', true);
